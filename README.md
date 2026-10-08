@@ -5,7 +5,7 @@ automatically, even when two people type in the same spot at the same time, or w
 someone goes offline and comes back.
 
 Stack: React (Vite), Django, Django Channels (WebSockets), SQLite. The merging is done by a
-CRDT written from scratch (no Yjs or Automerge).
+CRDT written from scratch (no Yjs or Automerge)
 
 ## How it works
 
