@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: inkwell-collab-editor-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && python manage.py migrate && daphne -b 0.0.0.0 -p $PORT collab.asgi:application
+    healthCheckPath: /api/docs/
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "0"
+      - key: ALLOWED_HOSTS
+        value: "*"
